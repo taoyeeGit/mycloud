@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="seata-order-service2001" />
+        <module name="cloud-rest-scz-payment8002" />
+        <module name="cloud-rest-scz-payment8001" />
+        <module name="eureka-server-7000" />
+        <module name="eureka-server-7001" />
+        <module name="eureka-server-7002" />
+        <module name="cloud-config-client3366" />
+        <module name="eureka-server-7003" />
+        <module name="cloud-config-client3355" />
+        <module name="seata-storage-service2002" />
+        <module name="cloud-stream-rabbitmq-xfz8803" />
+        <module name="cloud-stream-rabbitmq-xfz8802" />
+        <module name="alibaba-nacos-config-client3377" />
+        <module name="cloud-xfz-hystrix-dashboard9000" />
+        <module name="alibaba-sentinel-service8401" />
+        <module name="cloud-rest-zk-xf8000" />
+        <module name="alibaba-nacos-xf9000" />
+        <module name="cloud-rest-consul-zf8004" />
+        <module name="cloud-common-api" />
+        <module name="cloud-gateway-gateway9527" />
+        <module name="cloud-stream-rabbitmq-scz8801" />
+        <module name="cloud-rest-xfz-openfeign8000" />
+        <module name="cloud-rest-xfz-xflb8000" />
+        <module name="cloud-scz-hystrix8001" />
+        <module name="cloud-rest-zk-zf8003" />
+        <module name="cloud-config-server3344" />
+        <module name="cloud-xfz-openfeign-hystrix8000" />
+        <module name="cloud-rest-xfz-xf8000" />
+        <module name="alibaba-nacos-zf9002" />
+        <module name="alibaba-nacos-zf9001" />
+        <module name="cloud-rest-xfz-xf-lb8000" />
+        <module name="seata-account-service2003" />
+        <module name="cloud-rest-consul-xf8000" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="alibaba-nacos-config-client3377" target="1.8" />
+      <module name="alibaba-nacos-xf9000" target="1.8" />
+      <module name="alibaba-nacos-zf9001" target="1.8" />
+      <module name="alibaba-nacos-zf9002" target="1.8" />
+      <module name="alibaba-sentinel-service8401" target="1.8" />
+      <module name="cloud-common-api" target="1.8" />
+      <module name="cloud-config-client3355" target="1.8" />
+      <module name="cloud-config-client3366" target="1.8" />
+      <module name="cloud-config-server3344" target="1.8" />
+      <module name="cloud-gateway-gateway9527" target="1.8" />
+      <module name="cloud-rest-consul-xf8000" target="1.8" />
+      <module name="cloud-rest-consul-zf8004" target="1.8" />
+      <module name="cloud-rest-scz-payment8001" target="1.8" />
+      <module name="cloud-rest-scz-payment8002" target="1.8" />
+      <module name="cloud-rest-xfz-openfeign8000" target="1.8" />
+      <module name="cloud-rest-xfz-xf8000" target="1.8" />
+      <module name="cloud-rest-xfz-xflb8000" target="1.8" />
+      <module name="cloud-rest-zk-xf8000" target="1.8" />
+      <module name="cloud-rest-zk-zf8003" target="1.8" />
+      <module name="cloud-scz-hystrix8001" target="1.8" />
+      <module name="cloud-stream-rabbitmq-scz8801" target="1.8" />
+      <module name="cloud-stream-rabbitmq-xfz8802" target="1.8" />
+      <module name="cloud-stream-rabbitmq-xfz8803" target="1.8" />
+      <module name="cloud-xfz-hystrix-dashboard9000" target="1.8" />
+      <module name="cloud-xfz-openfeign-hystrix8000" target="1.8" />
+      <module name="eureka-server-7000" target="1.8" />
+      <module name="eureka-server-7001" target="1.8" />
+      <module name="eureka-server-7002" target="1.8" />
+      <module name="eureka-server-7003" target="1.8" />
+      <module name="mycloud" target="1.8" />
+      <module name="seata-account-service2003" target="1.8" />
+      <module name="seata-order-service2001" target="1.8" />
+      <module name="seata-storage-service2002" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,20 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: cloud-rest-xfz-service
+  zipkin:
+    base-url: http://127.0.0.1:9411
+  sleuth:
+    sampler:
+      probability: 1 #采样率值在0~1之间，1表示全部采集
+eureka:
+  instance:
+    instance-id: cloud-rest-xfz-service8000    #显示实例ID
+    prefer-ip-address: true    #显示IP
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka7000.com:7000/eureka/  #单机
+      #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  #集群

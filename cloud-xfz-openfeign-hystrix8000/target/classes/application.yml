@@ -1,0 +1,26 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: cloud-xfz-openfeign-hystrix8000-service
+eureka:
+  instance:
+    instance-id: cloud-xfz-openfeign-hystrix8000-service   #显示实例ID
+    prefer-ip-address: true    #显示IP
+  client:
+    # 表示是否将自己注册进 Eureka Server 默认为true
+    register-with-eureka: true
+    # 是否从Eureka Server抓取自己的注册信息，默认为true。单节点无所谓，集群必须设置为true才能配置ribbon使用负载均衡
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7000.com:7000/eureka/  #单机
+      #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  #集群
+ribbon:
+  # 指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间
+  ReadTimeout: 5000 #主要看这个参数，时间大于1秒或大于提供方约定的时间，即可（个人理解）
+  # 指的是建立连接后从服务器读取到可用资源所用的时间
+  ConnectTimeout: 5000 #设置多少无所谓，为了一致，跟ReadTimeout设为一样（个人理解）
+#加入对hystrix的支持
+feign:
+    hystrix:
+      enabled: true

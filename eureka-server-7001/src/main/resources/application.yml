@@ -1,0 +1,12 @@
+#eureka server 集群版
+server:
+  port: 7001
+eureka:
+  instance:
+    appname: eureka7001.com
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      #defaultZone: http://${eureka.instance.appname}:${server.port}/eureka/               #单机
+      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  #集群

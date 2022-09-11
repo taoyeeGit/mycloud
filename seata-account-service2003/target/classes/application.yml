@@ -1,0 +1,44 @@
+server:
+  port: 2003
+spring:
+  application:
+    name: seata-account-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.6.89:8848
+        namespace: 5aa4f8f5-ad74-4faa-b3a3-d5a5ea69bdbe
+        group: SEATA_GROUP
+        #cluster-name: DEFAULT
+#    alibaba:
+#      seata:
+#        tx-service-group: my_tx_group #在新版本中已经过时，用22~25代替了
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.6.89:3306/seata_account?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+seata:
+  tx-service-group: my_tx_group #事务分组配置（在v1.5之后默认值为default_tx_group）
+  service:
+    vgroup-mapping:
+      my_tx_group: default #指定事务分组至集群映射关系（等号右侧的集群名需要与Seata-server注册到Nacos的cluster保持一致）
+#  registry:
+#    type:      #使用nacos作为注册中心
+#      nacos:
+#        server-addr: 192.168.6.89:8848 #注册中心IP:端口
+#        application: seata-server     #Seata服务名（应与seata-server实际注册的服务名一致）
+#        group: SEATA_GROUP            #Seata分组名（应与seata-server实际注册的分组名一致）
+
+feign:
+  hystrix:
+    enabled: false
+
+logging:
+  level:
+    io:
+      seata: info
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <name>mycloud</name>
+  <groupId>com.taoyee.cloud</groupId>
+  <artifactId>mycloud</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+
+  <modules>
+    <!-- 公共API -->
+    <module>cloud-common-api</module>
+
+    <!-- eureka-server单机版 -->
+    <module>eureka-server-7000</module>
+
+    <!-- eureka-server集群版 -->
+    <module>eureka-server-7001</module>
+    <module>eureka-server-7002</module>
+    <module>eureka-server-7003</module>
+
+    <!--消费者8000调用生产者8001、8002 -->
+    <module>cloud-rest-xfz-xf8000</module>
+    <!--手动负载均衡算法，拷贝于cloud-rest-xfz-xf8000，调用payment 8001、8002 -->
+    <module>cloud-rest-xfz-xflb8000</module>
+    <!--openfeign负载均衡算法，调用payment 8001、8002 -->
+    <module>cloud-rest-xfz-openfeign8000</module>
+    <!--eureka客户端：生产者8001、8002 -->
+    <module>cloud-rest-scz-payment8001</module>
+    <module>cloud-rest-scz-payment8002</module>
+
+    <!-- zookeeper作为服务注册中心 -->
+    <module>cloud-rest-zk-xf8000</module>
+    <module>cloud-rest-zk-zf8003</module>
+
+    <!-- consul作为服务注册中心 -->
+    <module>cloud-rest-consul-xf8000</module>
+    <module>cloud-rest-consul-zf8004</module>
+
+    <module>cloud-scz-hystrix8001</module>
+    <module>cloud-xfz-openfeign-hystrix8000</module>
+    <!-- 先启7000，再起cloud-scz-hystrix8001，dashboard9000监控8001-->
+    <module>cloud-xfz-hystrix-dashboard9000</module>
+
+    <!-- 先启7000，在启动cloud-rest-scz-payment-service 8001、8002，最后启动9527-->
+    <module>cloud-gateway-gateway9527</module>
+    <!--都是Eureka客户端：配置服务中心3344从github上读取配置文件信息，配置客户端3355、3366从3344获取配置信息-->
+    <module>cloud-config-server3344</module>
+    <module>cloud-config-client3355</module>
+    <module>cloud-config-client3366</module>
+
+    <!-- spring cloud Stream 统一消息，-->
+    <module>cloud-stream-rabbitmq-scz8801</module>
+    <module>cloud-stream-rabbitmq-xfz8802</module>
+    <module>cloud-stream-rabbitmq-xfz8803</module>
+
+    <!-- alibaba-nacos-xf9000访问alibaba-nacos-zf9001、9002（9001与9002负载均衡+集群） -->
+    <module>alibaba-nacos-zf9001</module>
+    <module>alibaba-nacos-zf9002</module>
+    <module>alibaba-nacos-xf9000</module>
+
+    <module>alibaba-nacos-config-client3377</module>
+
+    <module>alibaba-sentinel-service8401</module>
+    <!-- SEATA分布式数据库： 订单、库存、账户 -->
+    <module>seata-order-service2001</module>
+    <module>seata-storage-service2002</module>
+    <module>seata-account-service2003</module>
+
+
+
+  </modules>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <junit.version>4.13.2</junit.version>
+    <log4j.version>1.2.17</log4j.version>
+    <lombok.version>1.18.18</lombok.version>
+    <mysql.version>8.0.21</mysql.version>
+    <druid.version>1.2.8</druid.version>
+    <mybatis.spring.boot.version>2.1.4</mybatis.spring.boot.version>
+    <spring.boot.version>2.3.12.RELEASE</spring.boot.version>
+    <spring.cloud.version>Hoxton.SR12</spring.cloud.version>
+    <spring.cloud.alibaba.version>2.2.6.RELEASE</spring.cloud.alibaba.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring.boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring.cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>${spring.cloud.alibaba.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>${log4j.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid-spring-boot-starter</artifactId>
+        <version>${druid.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mybatis.spring.boot</groupId>
+        <artifactId>mybatis-spring-boot-starter</artifactId>
+        <version>${mybatis.spring.boot.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <fork>true</fork>
+          <addResources>true</addResources>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

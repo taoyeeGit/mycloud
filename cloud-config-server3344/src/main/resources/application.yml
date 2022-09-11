@@ -1,0 +1,42 @@
+server:
+  port: 3344
+spring:
+  rabbitmq:
+    host: rabbitmq.com
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
+
+  application:
+    name: config-server3344-service
+  cloud:
+    config:
+      server:
+        #native:      #本地的配置文件
+          #search-locations: d:/app/config-service  #本地的配置文件
+        git:
+          uri: https://github.com/taoyeeGit/MyRepository.git
+          search-paths:
+            - MyRepository
+          #force-pull: true
+          #username: taoyeeGit
+          #password: hzc.1506
+          #skip-ssl-validation: true
+      label: master
+
+
+eureka:
+  instance:
+    instance-id: config-server3344-service
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka7000.com:7000/eureka/  #单机
+      #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  #集群
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"

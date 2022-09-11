@@ -1,0 +1,25 @@
+server:
+  port: 3377
+spring:
+  application:
+    name: alibaba-nacos-config-client-Service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: nacos8848.com:8848             #配置中心,Windows下本地单机Nacos2.02或2.1.0
+        #server-addr: 3nacoscluster91.com:8848      #配置中心,#VM下CentOS+3台Nacos集群之91:8848
+        #server-addr: 3nacoscluster92.com:8848      #配置中心,#VM下CentOS+3台Nacos集群之92:8848
+        #server-addr: 3nacoscluster93.com:8848      #配置中心,#VM下CentOS+3台Nacos集群之93:8848
+        #server-addr: 1nginx3nacoscluster.com:1689  #配置中心,#VM下CentOS+1台Nginx+3台Nacos集群之91:1689
+      config:
+        server-addr: nacos8848.com:8848            #配置中心,Windows下本地单机Nacos2.02或2.1.0
+        #server-addr: 3nacoscluster91.com:8848     #配置中心,#VM下CentOS+3台Nacos集群之91:8848
+        #server-addr: 3nacoscluster92.com:8848     #配置中心,#VM下CentOS+3台Nacos集群之92:8848
+        #server-addr: 3nacoscluster93.com:8848     #配置中心,#VM下CentOS+3台Nacos集群之93:8848
+        #server-addr: 1nginx3nacoscluster.com:1689   #配置中心,#VM下CentOS+1台Nginx+3台Nacos集群之91:1689
+        file-extension: yaml             #配置文件后缀名
+# Data ID的规则
+# ${prefix}              -${spring.profiles.active}.${file-extension}
+# spring.application.name-spring.profiles.active.spring.cloud.nacos.config.file-extension
+# alibaba-nacos-config-client-Service-dev.yaml
+

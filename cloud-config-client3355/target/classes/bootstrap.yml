@@ -1,0 +1,33 @@
+server:
+  port: 3355
+spring:
+  application:
+    name: config-client3355-service
+  cloud:
+    config:
+      label: master #分支名称
+      name: config  #配置文件名称
+      profile: dev  #配置文件 后缀 名称
+      uri: http://localhost:3344
+  rabbitmq:
+    host: rabbitmq.com
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
+
+eureka:
+  instance:
+    instance-id: config-client3355-service
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka7000.com:7000/eureka/  #单机
+      #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  #集群
+#暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

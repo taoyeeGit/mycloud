@@ -1,0 +1,9 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: cloud-consul-xfz-service
+  cloud:
+    consul:
+      host: consulClient.com
+      port: 8500

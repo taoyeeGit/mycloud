@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/alibaba-nacos-config-client3377/alibaba-nacos-config-client3377.iml" filepath="$PROJECT_DIR$/alibaba-nacos-config-client3377/alibaba-nacos-config-client3377.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alibaba-nacos-xf9000/alibaba-nacos-xf9000.iml" filepath="$PROJECT_DIR$/alibaba-nacos-xf9000/alibaba-nacos-xf9000.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alibaba-nacos-zf9001/alibaba-nacos-zf9001.iml" filepath="$PROJECT_DIR$/alibaba-nacos-zf9001/alibaba-nacos-zf9001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alibaba-nacos-zf9002/alibaba-nacos-zf9002.iml" filepath="$PROJECT_DIR$/alibaba-nacos-zf9002/alibaba-nacos-zf9002.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alibaba-sentinel-service8401/alibaba-sentinel-service8401.iml" filepath="$PROJECT_DIR$/alibaba-sentinel-service8401/alibaba-sentinel-service8401.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-common-api/cloud-common-api.iml" filepath="$PROJECT_DIR$/cloud-common-api/cloud-common-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-config-client3355/cloud-config-client3355.iml" filepath="$PROJECT_DIR$/cloud-config-client3355/cloud-config-client3355.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-config-client3366/cloud-config-client3366.iml" filepath="$PROJECT_DIR$/cloud-config-client3366/cloud-config-client3366.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-config-server3344/cloud-config-server3344.iml" filepath="$PROJECT_DIR$/cloud-config-server3344/cloud-config-server3344.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-gateway-gateway9527/cloud-gateway-gateway9527.iml" filepath="$PROJECT_DIR$/cloud-gateway-gateway9527/cloud-gateway-gateway9527.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-rest-consul-xf8000/cloud-rest-consul-xf8000.iml" filepath="$PROJECT_DIR$/cloud-rest-consul-xf8000/cloud-rest-consul-xf8000.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-rest-consul-zf8004/cloud-rest-consul-zf8004.iml" filepath="$PROJECT_DIR$/cloud-rest-consul-zf8004/cloud-rest-consul-zf8004.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-rest-scz-payment8001/cloud-rest-scz-payment8001.iml" filepath="$PROJECT_DIR$/cloud-rest-scz-payment8001/cloud-rest-scz-payment8001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-rest-scz-payment8002/cloud-rest-scz-payment8002.iml" filepath="$PROJECT_DIR$/cloud-rest-scz-payment8002/cloud-rest-scz-payment8002.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-rest-xfz-openfeign8000/cloud-rest-xfz-openfeign8000.iml" filepath="$PROJECT_DIR$/cloud-rest-xfz-openfeign8000/cloud-rest-xfz-openfeign8000.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-rest-xfz-xf8000/cloud-rest-xfz-xf8000.iml" filepath="$PROJECT_DIR$/cloud-rest-xfz-xf8000/cloud-rest-xfz-xf8000.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-rest-xfz-xflb8000/cloud-rest-xfz-xflb8000.iml" filepath="$PROJECT_DIR$/cloud-rest-xfz-xflb8000/cloud-rest-xfz-xflb8000.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-rest-zk-xf8000/cloud-rest-zk-xf8000.iml" filepath="$PROJECT_DIR$/cloud-rest-zk-xf8000/cloud-rest-zk-xf8000.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-rest-zk-zf8003/cloud-rest-zk-zf8003.iml" filepath="$PROJECT_DIR$/cloud-rest-zk-zf8003/cloud-rest-zk-zf8003.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-scz-hystrix8001/cloud-scz-hystrix8001.iml" filepath="$PROJECT_DIR$/cloud-scz-hystrix8001/cloud-scz-hystrix8001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-stream-rabbitmq-scz8801/cloud-stream-rabbitmq-scz8801.iml" filepath="$PROJECT_DIR$/cloud-stream-rabbitmq-scz8801/cloud-stream-rabbitmq-scz8801.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-stream-rabbitmq-xfz8802/cloud-stream-rabbitmq-xfz8802.iml" filepath="$PROJECT_DIR$/cloud-stream-rabbitmq-xfz8802/cloud-stream-rabbitmq-xfz8802.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-stream-rabbitmq-xfz8803/cloud-stream-rabbitmq-xfz8803.iml" filepath="$PROJECT_DIR$/cloud-stream-rabbitmq-xfz8803/cloud-stream-rabbitmq-xfz8803.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-xfz-hystrix-dashboard9000/cloud-xfz-hystrix-dashboard9000.iml" filepath="$PROJECT_DIR$/cloud-xfz-hystrix-dashboard9000/cloud-xfz-hystrix-dashboard9000.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-xfz-openfeign-hystrix8000/cloud-xfz-openfeign-hystrix8000.iml" filepath="$PROJECT_DIR$/cloud-xfz-openfeign-hystrix8000/cloud-xfz-openfeign-hystrix8000.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server-7000/eureka-server-7000.iml" filepath="$PROJECT_DIR$/eureka-server-7000/eureka-server-7000.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server-7001/eureka-server-7001.iml" filepath="$PROJECT_DIR$/eureka-server-7001/eureka-server-7001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server-7002/eureka-server-7002.iml" filepath="$PROJECT_DIR$/eureka-server-7002/eureka-server-7002.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server-7003/eureka-server-7003.iml" filepath="$PROJECT_DIR$/eureka-server-7003/eureka-server-7003.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mycloud.iml" filepath="$PROJECT_DIR$/mycloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seata-account-service2003/seata-account-service2003.iml" filepath="$PROJECT_DIR$/seata-account-service2003/seata-account-service2003.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seata-order-service2001/seata-order-service2001.iml" filepath="$PROJECT_DIR$/seata-order-service2001/seata-order-service2001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seata-storage-service2002/seata-storage-service2002.iml" filepath="$PROJECT_DIR$/seata-storage-service2002/seata-storage-service2002.iml" />
+    </modules>
+  </component>
+</project>

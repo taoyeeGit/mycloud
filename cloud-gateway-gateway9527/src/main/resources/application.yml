@@ -1,0 +1,33 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway-9527-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #开启从注册中心动态创建路由的功能，利用微服务名称进行路由
+      routes:
+        - id: route1
+          #uri: http://localhost:8001  #写死了
+          uri: lb://cloud-rest-scz-payment-service #匹配后提供服务的路由地址
+          predicates:
+            - Path=/payment/get/**
+
+        - id: route2
+          #uri: http://localhost:8001  #写死了
+          uri: lb://cloud-rest-scz-payment-service #匹配后提供服务的路由地址
+          predicates:
+            - Path=/payment/openfeign/**
+eureka:
+  instance:
+    instance-id:  cloud-gateway-9527-service   #显示实例ID
+    prefer-ip-address: true    #显示IP
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7000.com:7000/eureka/  #单机
+      #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  #集群
+

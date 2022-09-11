@@ -1,0 +1,18 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: cloud-scz-hystrix-service-8001
+eureka:
+  instance:
+    instance-id: cloud-scz-hystrix-service-8001   #显示实例ID
+    prefer-ip-address: true    #显示IP
+  client:
+    # 表示是否将自己注册进 Eureka Server 默认为true
+    register-with-eureka: true
+    # 是否从Eureka Server抓取自己的注册信息，默认为true。单节点无所谓，集群必须设置为true才能配置ribbon使用负载均衡
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7000.com:7000/eureka/  #单机
+      #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  #集群
+

@@ -1,0 +1,18 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: alibaba-nacos-zfService
+  cloud:
+    nacos:
+      discovery:
+        server-addr: nacos8848.com:8848             #配置中心,#Windows下本地单机Nacos2.02或2.1.0
+        #server-addr: 3nacoscluster91.com:8848       #配置中心,#VM下CentOS+3台Nacos集群之91:8848
+        #server-addr: 3nacoscluster92.com:8848       #配置中心,#VM下CentOS+3台Nacos集群之92:8848
+        #server-addr: 3nacoscluster93.com:8848       #配置中心,#VM下CentOS+3台Nacos集群之93:8848
+        #server-addr: 1nginx3nacoscluster.com:1689   #配置中心,#VM下CentOS+1台Nginx+3台Nacos集群之91:1689
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -1,0 +1,32 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: cloud-rest-scz-payment-service #显示服务名称
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/springcloud?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+  zipkin:
+    base-url: http://127.0.0.1:9411
+  sleuth:
+    sampler:
+      probability: 1 #采样率值在0~1之间，1表示全部采集
+
+eureka:
+  instance:
+    instance-id: cloud-rest-scz-payment-service8001 #显示实例ID
+    prefer-ip-address: true  #显示IP
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka7000.com:7000/eureka/  #单机
+      #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  #集群
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.taoyee.cloud.entities
+

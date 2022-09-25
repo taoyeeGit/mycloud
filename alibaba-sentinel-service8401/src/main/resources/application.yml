@@ -6,18 +6,38 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: nacos8848.com:8848           #配置中心,Windows下本地单机Nacos2.02或2.1.0
-        #server-addr: 3nacoscluster91.com:8848     #配置中心,#VM下CentOS+3台Nacos集群之91:8848
-        #server-addr: 3nacoscluster92.com:8848     #配置中心,#VM下CentOS+3台Nacos集群之92:8848
-        #server-addr: 3nacoscluster93.com:8848      #配置中心,#VM下CentOS+3台Nacos集群之93:8848
+        server-addr: nacos8848.com:8848              #配置中心,Windows下本地单机Nacos2.02或2.1.0
+        #server-addr: 3nacoscluster91.com:8848       #配置中心,#VM下CentOS+3台Nacos集群之91:8848
+        #server-addr: 3nacoscluster92.com:8848       #配置中心,#VM下CentOS+3台Nacos集群之92:8848
+        #server-addr: 3nacoscluster93.com:8848       #配置中心,#VM下CentOS+3台Nacos集群之93:8848
         #server-addr: 1nginx3nacoscluster.com:1689   #配置中心,#VM下CentOS+1台Nginx+3台Nacos集群之91:1689
     sentinel:
       transport:
         dashboard: localhost:8080  #配置sentinel dashboard地址
         port: 8719       #默认8719，若被占用从8719开始自动+1，直至找到未被占用的端口
 
+    datasource:
+      ds1:
+        nacos:
+          server-addr: localhost:8848
+          dataId: ${spring.application.name}
+          groupId: DEFAULT_GROUP
+          data-type: json
+          rule-type: flow
+
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
+#       dataId：   alibaba-sentinel-service
+#        [{
+#           "resource":"/testB",     #资源名称
+#           "limitApp":"default",    #来源应用
+#           "grade":1,               #阈值类型：0表示线程数，1表示QPS
+#           "count":1,               #单机阈值
+#           "strategy":0,            #流控模式：0表示直接，1表示关联，2表示链路
+#           "controlBehavior":0,     #流控效果：0表示直接失败，1表示warm up，2表示排队等待
+#           "clusterMode":false      #是否集群
+#         }]

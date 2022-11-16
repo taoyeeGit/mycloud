@@ -1,4 +1,4 @@
-package com.taoyee.cloud.entities.juc;
+package com.taoyee.cloud.example.juc;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -15,13 +15,14 @@ public class VolatileMemoryVisibility {
          * - 使用语句（2），注释语句（1） -> 程序正常结束
          * @author taoyee
          */
-        //private int number;                // （1）
+        //private int number;            // （1）
         private volatile int number;     // （2）
         public void changeNum() {
             this.number = 100;
         }
         public void changeNumAdd() {
-            this.number++;//多线程下，会导致值覆盖了，从而导致丢失，不能保证完整性
+            this.number++;
+            //多线程下，会导致值覆盖了，从而导致丢失，不能保证完整性
         }
         //AtomicInteger atomicInteger=new AtomicInteger();
     }

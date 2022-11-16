@@ -17,26 +17,28 @@ public class ZfHystrixController {
     private String serverPort;
     @Resource
     private ZfHystrixService zfHystrixService;
+
+    ////////////////////////  服务降级  //////////////////////////
     @GetMapping(value="/zf/hystrix/info_Ok/{id}")
     public String zfHystrixInfo_Ok(@PathVariable("id")  Integer id){
         String result=zfHystrixService.zfHystrixInfo_Ok(id);
-        log.info("*****result:  "+result);
+        log.info("***服务降级**result:  "+result);
         return result;
     }
 
     @GetMapping(value="/zf/hystrix/timeout/{id}")
     public String zfHystrixInfo_timeout(@PathVariable ("id") Integer id){
         String result=zfHystrixService.zfHystrixInfo_timeout(id);
-        log.info("*****result:  "+result);
+        log.info("***服务降级**result:  "+result);
         return result;
     }
 
 
-    ////////////////////////  服务熔断   //////////////////////////
+    ////////////////////////  服务熔断  //////////////////////////
     @GetMapping(value="/zf/circuitBreaker/{id}")
     public String zfCircuitBreaker(@PathVariable ("id") Integer id){
         String result=zfHystrixService.zfCircuitBreaker(id);
-        log.info("*****result:  "+result);
+        log.info("**服务熔断***result:  "+result);
         return result;
     }
 }

@@ -1,4 +1,4 @@
-package com.taoyee.cloud.entities.juc;
+package com.taoyee.cloud.example.juc;
 
 import java.security.KeyStore;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -17,8 +17,9 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class SczXfzDemo {
     public static void main(String[] args) {
-       // addDesc();//练习题
-        //scxfMethod();//生产者与消费者典型例子
+        addDesc();//练习题
+
+        scxfMethod();//生产者与消费者典型例子
     }
 
     private static void scxfMethod() {
@@ -46,7 +47,7 @@ public class SczXfzDemo {
 
     private static void addDesc() {
         ShareData shareData = new ShareData();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 50; i++) {
             new Thread(() -> {
                 shareData.add();
 
@@ -70,7 +71,9 @@ class ShareResource {
         this.blockingQueue = blockingQueue;
         System.out.println("用的阻塞队列类型为：\t"+blockingQueue.getClass().getName());
     }
-
+    public void stop(){//歇业
+        this.FLAG=false;
+    }
     public void sc() {//生产
         String data = null;
         boolean rtValue;
@@ -106,9 +109,6 @@ class ShareResource {
                 e.printStackTrace();
             }
         }
-    }
-    public void stop(){//歇业
-        this.FLAG=false;
     }
 }
 

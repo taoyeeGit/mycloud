@@ -1,4 +1,4 @@
-package com.taoyee.cloud.entities.jvm;
+package com.taoyee.cloud.example.jvm;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;

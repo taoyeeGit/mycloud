@@ -1,2 +1,11 @@
 server:
   port: 9000
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "localhost"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

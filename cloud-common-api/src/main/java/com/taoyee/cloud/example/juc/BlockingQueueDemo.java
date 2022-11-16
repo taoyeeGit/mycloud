@@ -1,4 +1,4 @@
-package com.taoyee.cloud.entities.juc;
+package com.taoyee.cloud.example.juc;
 
 import lombok.SneakyThrows;
 
@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  * @date: 2022-09-19 14:27
  * @version:
  */
-public class TetsBlockingQueue {
+public class BlockingQueueDemo {
 
     public static void main(String[] args) throws Exception{
         // List<String > arrlist=new ArrayList<>();
@@ -24,12 +24,12 @@ public class TetsBlockingQueue {
         blockingQueueLX();//API 练习
         */
 
-        BlockingQueue<String> synchronousQueue=new SynchronousQueue<>();//单个元素的存取，存一个才能取一个
+        java.util.concurrent.BlockingQueue<String> synchronousQueue=new SynchronousQueue<>();//单个元素的存取，存一个才能取一个
         eGsynchronousQueue();//API 练习example
 
     }
     private static void eGsynchronousQueue() {
-        BlockingQueue<String> synchronousQueue=new SynchronousQueue<>();//单个元素的存取，存一个才能取一个
+        java.util.concurrent.BlockingQueue<String> synchronousQueue=new SynchronousQueue<>();//单个元素的存取，存一个才能取一个
         new Thread(()->{
             try {
                 System.out.println(Thread.currentThread().getName()+"=ADD=111==");
@@ -59,7 +59,7 @@ public class TetsBlockingQueue {
     }
 
     private static void blockingQueueLX() throws InterruptedException {//API 练习
-        BlockingQueue<String > blockingQueue=new ArrayBlockingQueue<>(3);
+        java.util.concurrent.BlockingQueue<String > blockingQueue=new ArrayBlockingQueue<>(3);
         /*System.out.println(blockingQueue.add("a"));
         System.out.println(blockingQueue.add("b"));
         System.out.println(blockingQueue.add("c"));

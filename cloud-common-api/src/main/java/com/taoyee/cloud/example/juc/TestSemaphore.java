@@ -1,4 +1,4 @@
-package com.taoyee.cloud.entities.juc;
+package com.taoyee.cloud.example.juc;
 
 import cn.hutool.core.util.NumberUtil;
 import cn.hutool.core.util.RandomUtil;

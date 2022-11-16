@@ -1,4 +1,4 @@
-package com.taoyee.cloud.entities.juc;
+package com.taoyee.cloud.example.juc;
 
 import com.taoyee.cloud.entities.Payment;
 import sun.security.jgss.SunProvider;

@@ -1,4 +1,4 @@
-package com.taoyee.cloud.entities.juc;
+package com.taoyee.cloud.example.juc;
 import cn.hutool.core.lang.UUID;
 
 import java.util.*;
@@ -7,18 +7,18 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 /**
- * @description: 集合类不安全的解决方法 Concurrent Modification Exception
+ * @description: 集合类不安全的解决方法 ConcurrentModificationException
  * @author: taoyee
  * @date: 2022-09-18 10:16
  * @version: 1.0
  */
-public class TestCollectionNotSafe {
+public class CollectionNotSafeDemo {
     public static void main(String[] args) {
-        //testListNotSafe();
-        //testSetNotSafe();
-        testMapNotSafe();
+        //listNotSafe();
+        //setNotSafe();
+        //mapNotSafe();
     }
-    private static void testMapNotSafe() {
+    private static void  mapNotSafe() {
         //Map<Integer,String > map = new HashMap<Integer,String >();//java.util.ConcurrentModificationException,解决方法有以下两种
         //Map<Integer,String > map = Collections.synchronizedMap(new HashMap<Integer,String>());//方法1
         Map<Integer,String >  map = new ConcurrentHashMap<Integer,String>();//方法2
@@ -31,7 +31,7 @@ public class TestCollectionNotSafe {
 
          }
     }
-    private static void testSetNotSafe() {
+    private static void setNotSafe() {
         //Set<String > set = new HashSet<String >();//java.util.ConcurrentModificationException,解决方法有以下两种
         //Set<String > set = Collections.synchronizedSet(new HashSet<String >());//方法1
         Set<String> set = new CopyOnWriteArraySet<String>();//方法2
@@ -42,7 +42,7 @@ public class TestCollectionNotSafe {
             }, "线程" + String.valueOf(i)).start();
         }
     }
-    private static void testListNotSafe() {
+    private static void listNotSafe() {
         //List<String> ls = new ArrayList<String>();//java.util.ConcurrentModificationException,解决方法有以下三种
         //List<String> ls = new Vector<String>();//方法1
         //List<String > ls = Collections.synchronizedList(new ArrayList<String >());//方法2
@@ -56,3 +56,4 @@ public class TestCollectionNotSafe {
     }
 
 }
+

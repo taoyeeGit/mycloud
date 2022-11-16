@@ -32,7 +32,6 @@ public class OpenfeignHystrixController {
     //前提：8001超时为3秒，程序运行需要2秒.   而本系统的改业务的超时为1.5秒，故降级用xf_fallback_timeout处理*/
     @HystrixCommand  // 后面不加任何属性参数，若出现异常则调用defaultFallback指定的全局方法。 带了参数，若出现异常，就用自己的fallbackMethod指定的方法
     public String xfHystrixInfo_timeout(@PathVariable ("id") Integer id){
-
         return openfeignHystrixService.zfHystrixInfo_timeout(id);
     }
 
@@ -41,7 +40,6 @@ public class OpenfeignHystrixController {
         return result;
     }
     public String global_fallback(){
-
         return "我是消费者全局Hystrix..."+Thread.currentThread().getName()+" ...";
     }
 }

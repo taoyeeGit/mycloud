@@ -1,4 +1,4 @@
-package com.taoyee.cloud.entities.juc;
+package com.taoyee.cloud.example.juc;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
@@ -10,11 +10,11 @@ import java.util.concurrent.TimeUnit;
  * @date: 2022-09-19 10:47
  * @version: 1.0
  */
-public class TestCyclicBarrier {
+public class CyclicBarrierDemo {
     public static void main(String[] args) {
-        wfLambdaOK();
+        //wfLambdaOK();
         //jiwufu();
-        //wfOK();
+        wfOK();
 
     }
 
@@ -22,7 +22,7 @@ public class TestCyclicBarrier {
         CyclicBarrier cyclicBarrier=new CyclicBarrier(5, () -> new Runnable() {
             @Override
             public void run() {
-                System.out.println(Thread.currentThread().getName() + "\t    五福集齐，开奖！");
+                System.out.println( "\t    五福集齐，开奖！");
             }
         }.run());
         for (int i = 0; i <5 ; i++) {

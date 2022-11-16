@@ -1,4 +1,4 @@
-package com.taoyee.cloud.entities.juc;
+package com.taoyee.cloud.example.juc;
 
 import java.sql.Time;
 import java.util.concurrent.CountDownLatch;
@@ -10,25 +10,24 @@ import java.util.concurrent.TimeUnit;
  * @date: 2022-09-18 23:57
  * @version:
  */
-public class TestCountDownLatch {
+public class CountDownLatchDemo {
     public static void main(String[] args) {
-        //TestDemo.countDownLatch();
         CountDownLatch countDownLatch=new CountDownLatch(6);
         for (int i = 1; i <= 6; i++) {
             new Thread (()->{
                 try {
-                    TimeUnit.MILLISECONDS.sleep(1000);
+                    TimeUnit.MILLISECONDS.sleep(0);
                     System.out.println(Thread.currentThread().getName()+"\t 灭亡！");
                     countDownLatch.countDown();
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-            },MyEnum.getMyEnum(i).getMsg()).start();
+            }, String.valueOf(i)).start();//
         }
         try {
             countDownLatch.await();
-            TimeUnit.MILLISECONDS.sleep(100);
+            TimeUnit.MILLISECONDS.sleep(0);
             Thread.currentThread().setName("秦国");
             System.out.println(Thread.currentThread().getName()+"\t 一统天下");
         } catch (InterruptedException e) {

@@ -34,7 +34,7 @@ public class ZfHystrixService {
         //int i=10/0;
 
         //2、程序处理的时间超过设定时间，直接调用fallbackMethod的方法进行处理
-       int timeout=2000;
+       int timeout=2500;
         try {
             TimeUnit.MILLISECONDS.sleep(timeout);
         } catch (InterruptedException e) {
@@ -43,15 +43,15 @@ public class ZfHystrixService {
         return "线程池："+Thread.currentThread().getName()+"  ZfHystrixInfo_timeout，id:"+id+"    哈哈hahha~~~";
     }
     public String zf_fallback_timeout(Integer id){
-           String result="线程池："+Thread.currentThread().getName()+"  系统8001忙，请稍后再试...........";
+           String result="线程池："+Thread.currentThread().getName()+" zf_fallback_timeout 系统8001忙，请稍后再试...........";
         return result;
     }
     ////////////////////////  服务熔断   //////////////////////////
     @HystrixCommand(fallbackMethod = "fallbackCircuitBreaker"
-            ,commandProperties = {
+            ,commandProperties = {//请求在20秒内失败的次数超过10次且失败率超过60% 就开启熔断，即为open状态，此时所有的请求都不会进行转发
                 @HystrixProperty(name = "circuitBreaker.enabled",value= "true")//是否开启断路器
                ,@HystrixProperty(name = "circuitBreaker.requestVolumeThreshold",value= "10")//请求次数
-               ,@HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value= "10000")//时间窗口期
+               ,@HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value= "20000")//时间窗口期
                ,@HystrixProperty(name = "circuitBreaker.errorThresholdPercentage",value= "60")//失败率达到多少以后熔断
             }
     )

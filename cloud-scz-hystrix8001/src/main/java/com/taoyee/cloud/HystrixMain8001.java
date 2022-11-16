@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Bean;
 public class HystrixMain8001 {
     public static void main(String[] args) {
         SpringApplication.run(HystrixMain8001.class,args);
-
+        System.out.println("Hystrix scz  8001 is started ==>>>welcome  to  xi'an !!!");
     }
 
     /**
